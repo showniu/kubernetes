@@ -1,14 +1,10 @@
 ## metrics-server
 
-
-
 参考
 
 https://github.com/stefanprodan/k8s-prom-hpa
 
 https://k8s-install.opsnull.com/09-4.metrics-server%E6%8F%92%E4%BB%B6.html
-
-
 
 生成证书:
 
@@ -24,3 +20,4 @@ kubectl get --raw "/apis/metrics.k8s.io/v1beta1"
 ```
 
 未完待续...
+

@@ -1,23 +1,23 @@
-# k8s部署实践
+# kubernetes实践
 
 ### 基本步骤流程：
 
-* 部署etcd
-* 部署flannel
-* 部署Kubernetes集群（带证书和不带证书）
-  * 生成证书
-  * 部署Master节点
-  * 部署Node节点
-* 部署kube-dns服务
-* 部署dashboard
-* 部署helm
-* 部署promethus
-* 部署ingress
-  * nginx 
-  * traefik
-* 部署应用
-  * 
-* ...(未完待续)
+- [x] etcd  
+- [x] flannel
+- [x] Kubernetes集群
+  - [x] 生成证书
+  - [x] 部署Master节点
+  - [x] 部署Node节点
+- [x] kube-dns
+- [x] dashboard
+- [ ] metrics-server
+- [x] helm
+- [x] promethus
+  - [x] grafana
+- [x] ingress
+  - [x] nginx
+  - [ ] treafik
+- [ ] 未完待续
 
 #### 原理和操作文档请参考`/doc`目录下内容，和各目录下README.md
 
@@ -42,4 +42,5 @@ Dashboard官方部署文档：https://kubernetes.io/docs/tasks/access-applicatio
 个人教程：https://github.com/sadlar/k8s-install-note
 
 个人教程：https://github.com/gjmzj/kubeasz
+
 
