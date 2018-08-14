@@ -11,13 +11,11 @@ wget https://storage.googleapis.com/kubernetes-the-hard-way/kube-dns.yaml
 https://github.com/lijiapengsa/k8s/tree/master/Doc/kube-dns/kube-dns.yaml
 ```
 
-> 解释： 不管使用以上哪个 kube-dns 的描述文件后都需要根据实际环境需要修改三个地方：
+> 不管使用以上哪个 kube-dns 的描述文件后都需要根据实际环境需要修改三个地方：
 >
-> 1. clusterIP： 修改为前面教程预留的IP地址、10.211.200.2
-> 2. kube-dns启动参数： 在Deployment配置块中 args: 处添加kube-master-url 配置、--kube-master-url=http://192.168.10.249:8080、如果不配置默认会使用https方式连接master
-> 3. kube-dns启动image：为了能够快速启动将所有默认google官方的image替换为阿里云的images、registry.cn-beijing.aliyuncs.com/k8s_images/k8s-dns-kube-dns-amd64:1.14.7、
->    registry.cn-beijing.aliyuncs.com/k8s_images/k8s-dns-dnsmasq-nanny-amd64:1.14.7、
->    registry.cn-beijing.aliyuncs.com/k8s_images/k8s-dns-sidecar-amd64:1.14.7
+> * clusterIP： 修改为前面教程预留的IP地址、10.211.200.2
+> * kube-dns启动参数： 在Deployment配置块中 args: 处添加kube-master-url 配置、--kube-master-url=http://192.168.10.249:8080、如果不配置默认会使用https方式连接master
+> * kube-dns启动image：为了能够快速启动将所有默认google官方的image替换为国内阿里云的
 
 准备-上传配置描述文件
 
@@ -88,10 +86,8 @@ Address 1: 10.211.0.1 kubernetes.default.svc.cluster.loca
 
 > 解释：以上可以看到 kube-dns service （10.211.200.2） 可以成功的将domain解析为 Address
 
+kube-dns在将来可能会被coredns替代
 
+------
 
-kube-dns 部署成功
-
-### 3. 基于有证书集群部署kube-dns
-
-待完成
+有证书和无证书的的方式仅仅在于无证书的需要手动指定kube-master的非加密端口
