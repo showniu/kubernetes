@@ -8,7 +8,7 @@
 # 原版描述文件
 wget https://storage.googleapis.com/kubernetes-the-hard-way/kube-dns.yaml
 # 实际使用(更改后)描述文件
-https://github.com/lijiapengsa/k8s/tree/master/Doc/kube-dns/kube-dns.yaml
+https://github.com/lijiapengsa/kubernetes/blob/master/doc/kube-dns/kube-dns.yaml
 ```
 
 > 不管使用以上哪个 kube-dns 的描述文件后都需要根据实际环境需要修改三个地方：
@@ -21,7 +21,7 @@ https://github.com/lijiapengsa/k8s/tree/master/Doc/kube-dns/kube-dns.yaml
 
 ```bash
 # 修改服务器 resolv.conf 文件、添加search 和 nameserver
-https://github.com/lijiapengsa/k8s/tree/master/Doc/kube-dns/resolv.conf
+https://github.com/lijiapengsa/kubernetes/blob/master/doc/kube-dns/resolv.conf
 # 上传配置配置文件、
 cd k8s/Doc
 ansible-playbook -i ./hosts  playbook.yaml
@@ -63,7 +63,7 @@ replicaset.apps/kube-dns-5c68b47b5   1         1         1         20m
 
 ```bash
 # 测试用到的描述文件地址(不用改任何东西)
-https://github.com/lijiapengsa/k8s/tree/master/Doc/kube-dns/busybox.yaml
+https://github.com/lijiapengsa/kubernetes/blob/master/doc/kube-dns/busybox.yaml
 ```
 
 ```bash
