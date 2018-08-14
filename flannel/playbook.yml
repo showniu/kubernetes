@@ -1,0 +1,38 @@
+---
+# 第一次运行需要开启,第二次执行一定要注释,主要功能是在etcd中注册一段地址,
+# 添加一台装有etcdctl的服务器到 ./hosts 内的etcdctl组,然后将下面shell模块中的ip更改为etcd集群中任意一个服务器即可
+# 因为是ETCD是集群所以在任何一台主机上注册即可,重复注册会报错，所以这里将本步骤单独拿出来,第一次部署跑一边即可
+# - hosts: register
+#   remote_user: root
+#   tasks:
+#     - name: cmd
+#       shell:
+#       args:
+#         executable: /bin/bash
+- hosts: flannel
+  remote_user: root
+  tasks:
+    - name: copy flannel二进制执行程序和docker配置文件到所有节点
+      copy:
+        src: "{{ item.src }}"
+        dest: "{{ item.dest }}"
+        mode: "{{ item.mode }}"
+      with_items:
+        - { src: './config/flanneld',dest: '/etc/sysconfig/', mode: '0755'}
+        - { src: './file/flanneld',dest: '/usr/local/sbin/',mode: '0755'}
+        - { src: './file/mk-docker-opts.sh',dest: '/usr/local/sbin/',mode: '0755'}
+        - { src: './config/docker.service',dest: '/lib/systemd/system/docker.service', mode: '0644'}
+        - { src: './config/pre_deploy.sh',dest: '/usr/local/sbin/',mode: '0755'}
+
+    - name: Flannel配置文件
+      template:
+        src: ./config/flanneld.service
+        dest: /etc/systemd/system/flanneld.service
+    - name: 向etcd注册网络信息
+      shell: /usr/local/sbin/pre_deploy.sh
+
+    - name: 启动Flannel
+      shell: systemctl daemon-reload &&   systemctl enable flanneld && systemctl start flanneld
+
+    - name: 重启docker
+      shell: systemctl daemon-reload &&   systemctl enable docker && systemctl restart docker

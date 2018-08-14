@@ -1,0 +1,6 @@
+---
+- hosts: k8s-master
+  remote_user: root
+  tasks:
+    - name: 生成各种证书
+    

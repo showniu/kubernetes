@@ -1,0 +1,20 @@
+alertmanagerFiles:
+  alertmanager.yml:
+    global:
+      smtp_smarthost: 'smtp.263.net:465'
+      smtp_from: 'lijiapeng@xingshulin.com'
+      smtp_auth_username: 'lijiapeng@xingshulin.com'
+      smtp_auth_password: 'ljpLJP123'
+      smtp_require_tls: true
+
+    route:
+      group_by: ['alertname', 'pod_name']
+      group_wait: 10s
+      group_interval: 5m
+      receiver: AlertMail
+      repeat_interval: 3h
+
+    receivers:
+    - name: 'AlertMail'
+      email_configs:
+      - to: 'devops@xingshulin.com'

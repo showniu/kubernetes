@@ -1,0 +1,31 @@
+[Unit]
+Description=Kubernetes Kubelet
+Documentation=https://github.com/GoogleCloudPlatform/kubernetes
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=simple
+WorkingDirectory=/var/lib/kubelet
+EnvironmentFile=-/etc/kubernetes/config
+EnvironmentFile=-/etc/kubernetes/kubelet
+ExecStart=/usr/local/sbin/kubelet \
+$SWAP \
+$KUBERCONFIG \
+$CLUSTER_DNS \
+$CLUSTER_DOMAIN \
+$KUBE_LOGTOSTDERR \
+$KUBE_LOG_LEVEL \
+$KUBELET_ADDRESS \
+$KUBELET_PORT \
+$KUBE_ALLOW_PRIV \
+$KUBELET_POD_INFRA_CONTAINER \
+$KUBELET_ARGS
+
+# $KUBELET_HOSTNAME \
+
+Restart=always
+LimitNOFILE=65536
+
+[Install]
+WantedBy=default.target

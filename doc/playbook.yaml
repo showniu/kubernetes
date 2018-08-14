@@ -1,0 +1,41 @@
+- hosts: k8s-master
+  remote_user: root
+  tasks:
+    - name: copy config to master
+      copy:
+        src: "{{ item.src }}"
+        dest: "{{ item.dest }}"
+        mode: "{{ item.mode }}"
+      with_items:
+        # 集群非tls部署
+        # - { src: './dashboard/kubernetes-dashboard.yaml',dest: '/apps/k8s/dashboard/',mode: '0644'}
+        # - { src: './kube-dns/kube-dns.yaml',dest: '/apps/k8s/dns/',mode: '0644'}
+        # 集群支持tls
+        - { src: './dashboard/kubernetes-dashboard-tls.yaml',dest: '/apps/k8s/dashboard/',mode: '0644'}
+        # - { src: './kube-dns/kube-dns-tls.yaml',dest: '/apps/k8s/dns/',mode: '0644'}
+        # 通用
+        - { src: './kube-dns/busybox.yaml',dest: '/apps/dns/',mode: '0644'}
+        - { src: './kube-dns/resolv.conf',dest: '/etc/',mode: '0644'}
+        - { src: './metrics-server/metrics-server-0.2.1/deploy',dest: '/apps/k8s/metrics-server/',mode: '0644'}
+        # - { src: './metrics-server/1.8+',dest: '/apps/k8s/metrics-server/',mode: '0644'}
+
+- hosts: k8s-node
+  remote_user: root
+  tasks:
+    - name: resolv.config
+      copy:
+        src: "{{ item.src }}"
+        dest: "{{ item.dest }}"
+        mode: "{{ item.mode }}"
+      with_items:
+          - { src: './kube-dns/resolv.conf',dest: '/etc/',mode: '0644'}
+          - { src: '../k8s-install-tls/gen-ca/ssl',dest: '/etc/kubernetes/',mode: '0644'}
+    - name: Add IP address of all hosts to all hosts
+      lineinfile:
+        dest: /etc/hosts
+        line: "{{ item.hostip }}  {{ item.hostname }}"
+        state: present
+      with_items:
+        - { hostip: '192.168.10.249', hostname: 'k8s01'}
+        - { hostip: '192.168.10.248', hostname: 'k8s02'}
+        - { hostip: '192.168.10.247', hostname: 'k8s03'}

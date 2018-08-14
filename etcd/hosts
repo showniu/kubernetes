@@ -1,0 +1,6 @@
+[etcd]
+192.168.10.247 ansible_hostname=k8s03 ansible_default_ipv4=192.168.10.247
+192.168.10.248 ansible_hostname=k8s02 ansible_default_ipv4=192.168.10.248
+192.168.10.249 ansible_hostname=k8s01 ansible_default_ipv4=192.168.10.249
+[test]
+192.168.10.247

@@ -1,0 +1,28 @@
+[Unit]
+Description=Kubernetes API Server
+Documentation=https://github.com/GoogleCloudPlatform/kubernetes
+After=network.target
+
+[Service]
+Type=notify
+EnvironmentFile=-/etc/kubernetes/config
+EnvironmentFile=-/etc/kubernetes/kube-apiserver
+ExecStart=/usr/local/sbin/kube-apiserver \
+$KUBE_API_ARGS \
+$LOG_DIR \
+$KUBE_LOGTOSTDERR \
+$KUBE_LOG_LEVEL \
+$KUBE_ETCD_SERVERS \
+$KUBE_API_ADDRESS \
+$KUBE_API_PORT \
+$KUBELET_PORT \
+$KUBE_ALLOW_PRIV \
+$KUBE_SERVICE_ADDRESSES \
+$KUBE_ADMISSION_CONTROL
+
+
+Restart=always
+LimitNOFILE=65536
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,44 @@
+---
+- hosts: etcd
+  remote_user: root
+  become: true
+  gather_facts: false
+  # pre_tasks 是因为主控服务器ansible-playbook版本是2.x的，服务器是的python是3.x的，此情况下第一次通信需要开放此模块
+  # pre_tasks:
+  #   - name: 'install python2'
+  #     raw: apt-get update && apt-get -y install python-simplejson
+  #     register: output
+  #     changed_when: output.stdout != ""
+  #     tags: always
+  tasks:
+    # - name: copy etcd 二进制执行程序到服务器
+    #   copy:
+    #     src: "{{ item.src }}"
+    #     dest: "{{ item.dest }}"
+    #     mode: "{{ item.mode }}"
+    #   with_items:
+    #     - { src: './file/etcd',dest: '/usr/local/bin/etcd',mode: '0750'}
+    #     - { src: './file/etcdctl',dest: '/usr/local/bin/etcdctl',mode: '0750'}
+    #     # - { src: '',dest: '',mode: ''}
+    #
+    # - name: copy etcd.service to any nodes
+    #   template:
+    #     src: ./config/etcd.service
+    #     dest: /etc/systemd/system/etcd.service
+    #
+    # - name: create data directory for etcd
+    #   file:
+    #     path: /data/etcd
+    #     state: directory
+
+    - name: daemon-reload
+      shell: systemctl enable etcd
+        # systemctl daemon-reload ; systemctl  start etcd
+    # 弃用配置
+    # - name: copy start.sh to any nodes
+    #   template:
+    #     src: ./config/start.sh
+    #     dest: /data/start.sh
+    #     mode: 0750
+    # - name: start etcd
+    #   shell: rm -rf /data/etcd/*

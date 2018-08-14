@@ -1,0 +1,79 @@
+- hosts: k8s-node
+  remote_user: root
+  tasks:
+    # - name: 上传 node节点二进制执行程序到所有节点
+    #   copy:
+    #     src: "{{ item.src }}"
+    #     dest: "{{ item.dest }}"
+    #     mode: "{{ item.mode }}"
+    #   with_items:
+    #     - { src: './file/server/bin/kubectl',dest: '/usr/local/sbin/',mode: '0755'}
+    #     - { src: './file/server/bin/kubelet', dest: '/usr/local/sbin/',mode: '0755'}
+    #     - { src: './file/server/bin/kube-proxy', dest: '/usr/local/sbin/',mode: '0755'}
+    #
+    # - name: 上传 node节点证书和服务配置文件
+    #   copy:
+    #     src: "{{ item.src }}"
+    #     dest: "{{ item.dest }}"
+    #     mode: "{{ item.mode }}"
+    #   with_items:
+    #     - { src: './gen-ca/ssl',dest: '/etc/kubernetes/',mode: '0644'}
+    #     - { src: './config/config',dest: '/etc/kubernetes/',mode: '0644'}
+    #
+    #     - { src: './config/kubelet',dest: '/etc/kubernetes/',mode: '0644'}
+    #     - { src: './config/kubelet.service',dest: '/lib/systemd/system/',mode: '0644'}
+    #     # - { src: './config/kubelet.kubeconfig',dest: '/etc/kubernetes/',mode: '0644'}
+    #     - { src: './config/kube-proxy.service',dest: '/lib/systemd/system/',mode: '0644'}
+    #     - { src: './config/kube-proxy',dest: '/etc/kubernetes/',mode: '0644'}
+    #     - { src: './config/token.csv',dest: '/etc/kubernetes/',mode: '0644'}
+    # - name: create dir
+    #   file:
+    #     path: "{{ item.path }}"
+    #     state: "{{ item.state }}"
+    #   with_items:
+    #     - { path: '/logs/kubernetes',state: 'directory'}
+    #     - { path: '/var/lib/kubelet',state: 'directory'}
+    #     - { path: '/etc/kubernetes/manifests',state: 'directory'}
+    #
+    # - name: 创建 kubelet bootstrapping kubeconfig 文件
+    #   shell:
+    #       cd /etc/kubernetes &&
+    #       export KUBE_APISERVER="https://192.168.10.249:6443" &&
+    #       kubectl config set-cluster kubernetes \
+    #         --certificate-authority=/etc/kubernetes/ssl/ca.pem \
+    #         --embed-certs=true \
+    #         --server=${KUBE_APISERVER} \
+    #         --kubeconfig=bootstrap.kubeconfig &&
+    #       kubectl config set-credentials kubelet-bootstrap \
+    #         --token=41f7e4ba8b7be874fcff18bf5cf41a7c \
+    #         --kubeconfig=bootstrap.kubeconfig &&
+    #       kubectl config set-context default \
+    #         --cluster=kubernetes \
+    #         --user=kubelet-bootstrap \
+    #         --kubeconfig=bootstrap.kubeconfig &&
+    #       kubectl config use-context default --kubeconfig=bootstrap.kubeconfig
+    #
+    # - name: 创建 kube-proxy kubeconfig文件
+    #   shell:
+    #     cd /etc/kubernetes &&
+    #     export KUBE_APISERVER="https://192.168.10.249:6443" &&
+    #     kubectl config set-cluster kubernetes \
+    #       --certificate-authority=/etc/kubernetes/ssl/ca.pem \
+    #       --embed-certs=true \
+    #       --server=${KUBE_APISERVER} \
+    #       --kubeconfig=kube-proxy.kubeconfig &&
+    #     kubectl config set-credentials kube-proxy \
+    #       --client-certificate=/etc/kubernetes/ssl/kube-proxy.pem \
+    #       --client-key=/etc/kubernetes/ssl/kube-proxy-key.pem \
+    #       --embed-certs=true \
+    #       --kubeconfig=kube-proxy.kubeconfig &&
+    #     kubectl config set-context default \
+    #       --cluster=kubernetes \
+    #       --user=kube-proxy \
+    #       --kubeconfig=kube-proxy.kubeconfig &&
+    #     kubectl config use-context default --kubeconfig=kube-proxy.kubeconfig
+
+    - name: start node
+      shell: systemctl daemon-reload &&
+             systemctl start kubelet.service &&
+             systemctl start kube-proxy.service

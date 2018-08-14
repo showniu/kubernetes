@@ -1,0 +1,20 @@
+---
+- hosts: k8s-node
+  remote_user: root
+  tasks:
+    - name: 停止所有kubenetes服务
+      shell: systemctl -a | grep kube.*.service | awk '{print $1}'  |  xargs systemctl stop
+    #
+    - name: 删除所有kubenetes配置文件和证书
+      shell: rm -rf /etc/kubernetes
+
+    - name: 删除所有kubenetes可执行程序
+      shell: rm -rf /usr/local/sbin/kube*
+
+# - hosts: k8s-node
+#   remote_user: root
+#   tasks:
+#     - name: 停止所有kubenetes服务
+#
+#     - nmae: 删除所有kubenetes配置文件和证书
+#     - name: 删除所有kubenetes可执行程序

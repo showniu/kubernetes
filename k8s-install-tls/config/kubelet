@@ -1,0 +1,31 @@
+###
+## kubernetes kubelet (minion) config
+#
+## The address for the info server to serve on (set to 0.0.0.0 or "" for all interfaces)
+KUBELET_ADDRESS="--address=0.0.0.0"
+#
+## The port for the info server to serve on
+KUBELET_PORT="--port=10250"
+#
+## You may leave this blank to use the actual hostname
+# KUBELET_HOSTNAME="--hostname-override="
+#
+## location of the api-server
+# KUBELET_API_SERVER="--api-servers=http://192.168.10.249:8080"
+#
+## pod infrastructure container
+KUBELET_POD_INFRA_CONTAINER="--pod-infra-container-image=registry.cn-hangzhou.aliyuncs.com/google-containers/pause-amd64:3.0"
+#
+KUBERCONFIG='--kubeconfig=/etc/kubernetes/kubelet.kubeconfig'
+CLUSTER_DNS='--cluster-dns=10.211.200.2'
+CLUSTER_DOMAIN='--cluster-domain=cluster.local'
+
+## Add your own!
+KUBELET_ARGS="--fail-swap-on=false \
+--enable-server=true \
+--enable-debugging-handlers=true \
+--cgroup-driver=/lib/systemd/system/system.slice \
+--cgroup-driver=cgroupfs \
+--runtime-cgroups=/lib/systemd/system/system.slice \
+--experimental-bootstrap-kubeconfig=/etc/kubernetes/bootstrap.kubeconfig \
+--cert-dir=/etc/kubernetes/ssl"
