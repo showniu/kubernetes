@@ -18,3 +18,4 @@ spec:
     - hosts:
         - k8s-dashboard.xingshulin.com
       secretName: example-tls
+
