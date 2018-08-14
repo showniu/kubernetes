@@ -1,9 +1,9 @@
-#使用helm部署 promethues
+## 通过helm部署 promethues
 
-部署
+### 部署prometheus
 
 ```bash
-cd ~/prometheus
+cd kubernetes/doc/prometheus
 helm install --name monitor \
 --namespace monitoring \
 -f prom-settings.yaml \
@@ -11,6 +11,12 @@ helm install --name monitor \
 -f prom-alertrules.yaml \
 prometheus
 
+```
+
+### 部署grafana
+
+```bash
+cd kubernetes/doc/grafana/
 helm install \
 --name grafana \
 --namespace monitoring \
@@ -19,25 +25,21 @@ helm install \
 grafana
 ```
 
-修改配置文件（升级）
+### 修改配置文件（升级）
 
 ```bash
 helm upgrade monitor -f xxx -f xxx ... prometheus
 helm upgrade grafana -f xxx -f xxx ... prometheus
 ```
 
-删除
+### 删除
 
 ```bash
 helm delete prometheus  --purge
 helm delete grafana  --purge
 ```
 
-
-
-
-
-使用
+###使用
 
 prometheus-server  http://node_ip:30002
 
@@ -47,6 +49,4 @@ Grafana http://node_ip:30004
 
 
 
-
-
-https://github.com/helm/charts/tree/master/stable/prometheus
+参考连接 https://github.com/helm/charts/tree/master/stable/prometheus
