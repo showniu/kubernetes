@@ -8,7 +8,7 @@
 
 ```bash
 # 这是经过修改的描述文件
-https://github.com/lijiapengsa/k8s/blob/master/doc/CoreDns/coredns.yaml.base
+https://github.com/lijiapengsa/kubernetes/blob/master/doc/coredns/coredns.yaml.base
 ```
 
 > 修改说明：
@@ -31,7 +31,7 @@ kubectl create -f coredns.yaml.base
 
 ```bash
 # 测试用到的描述文件地址(不用改任何东西)
-https://github.com/lijiapengsa/k8s/tree/master/Doc/kube-dns/busybox.yaml
+https://github.com/lijiapengsa/kubernetes/blob/master/doc/kube-dns/busybox.yaml
 ```
 
 ```bash
