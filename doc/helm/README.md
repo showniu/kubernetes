@@ -1,20 +1,8 @@
-##安装：
+## helm
 
-出现下面的问题？
+### 安装
 
-```bash
-root@k8s01:~# helm version
-Client: &version.Version{SemVer:"v2.9.1", GitCommit:"20adb27c7c5868466912eebdf6664e7390ebe710", GitTreeState:"clean"}
-E0717 17:13:09.953791   19899 portforward.go:331] an error occurred forwarding 43082 -> 44134: error forwarding port 44134 to pod 535eccc638f97ae50ee67f868996ecdc7213bfa58a8761f81beb6f60a2112182, uid : unable to do port forwarding: socat not found.
-Error: cannot connect to Tiller
-root@k8s01:~# 
-```
-
-在每一个node上面安装socat 就OK了
-
-```bash
-apt-get install socat
-```
+部署很简单将二进制执行程序放在PATH的路径下面即可、helm的[下载连接](https://github.com/helm/helm/releases)
 
 如下helm安装正常：
 
@@ -24,11 +12,9 @@ Client: &version.Version{SemVer:"v2.9.1", GitCommit:"20adb27c7c5868466912eebdf66
 Server: &version.Version{SemVer:"v2.9.1", GitCommit:"20adb27c7c5868466912eebdf6664e7390ebe710", GitTreeState:"clean"}
 ```
 
-## 使用
+### 集群授权
 
-因为集群使用了RBAC所以在使用前需要配置权限
-
-在`rbac-config.yaml`
+因为集群使用了RBAC所以在使用前需要配置权限、权限描述文件`rbac-config.yaml`
 
 ```yaml
 apiVersion: v1
@@ -54,8 +40,13 @@ subjects:
 > 这是集群管理员的权限
 
 ```bash
-root@k8s01:/apps/k8s/helm# kubectl  create  -f  tiller.yaml
+root@k8s01:/apps/k8s/helm# kubectl  create  -f  rbac-config.yaml
 serviceaccount/tiller created
+```
+
+### 初始化helm工具
+
+```bash
 root@k8s01:/apps/k8s/helm# helm init --service-account tiller
 Creating /root/.helm
 Creating /root/.helm/repository
@@ -80,10 +71,23 @@ root@k8s01:/apps/k8s/helm# helm list
 
 > 授权和启动tiller服务，`helm list` 命令无错误输出即权限配置正确，服务启动成功
 
-helm安装成后，就可以借helm 安装其它服务
+helm安装成后，就可以借helm 安装其它服务、这个实践中`grafana`、`monitor`、`nginx-ingress` 服务是通过helm 的方式部署的。
 
+### 异常处理
 
+```bash
+root@k8s01:~# helm version
+Client: &version.Version{SemVer:"v2.9.1", GitCommit:"20adb27c7c5868466912eebdf6664e7390ebe710", GitTreeState:"clean"}
+E0717 17:13:09.953791   19899 portforward.go:331] an error occurred forwarding 43082 -> 44134: error forwarding port 44134 to pod 535eccc638f97ae50ee67f868996ecdc7213bfa58a8761f81beb6f60a2112182, uid : unable to do port forwarding: socat not found.
+Error: cannot connect to Tiller
+root@k8s01:~# 
+```
 
+在每一个node上面安装socat 
+
+```bash
+apt-get install socat
+```
 ------
 
 https://hub.kubeapps.com/ 、helm的仓库、相当于docker的hub。
