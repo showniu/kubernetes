@@ -10,7 +10,7 @@
 # 原版描述文件
 https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
 # 实际使用(更改后)描述文件
-https://github.com/lijiapengsa/k8s/tree/master/Doc/dashboard/kubernetes-dashboard.yaml
+https://github.com/lijiapengsa/kubernetes/blob/master/doc/dashboard/kubernetes-dashboard.yaml
 ```
 
 > 修改说明：不管使用以上哪个 kube-dashboard 的描述文件后都需要根据实际环境需要修改三个地方：
@@ -92,7 +92,7 @@ dashboard部署初步完成
 
 ```bash
 # 我实际使用的描述文件
-https://github.com/lijiapengsa/k8s/blob/master/Doc/dashboard/kubernetes-dashboard-tls.yaml
+https://github.com/lijiapengsa/kubernetes/blob/master/doc/dashboard/kubernetes-dashboard-tls.yaml
 ```
 
 > 修改说明：
