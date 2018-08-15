@@ -1,5 +1,3 @@
-
-
 ## Using Admission Controllers 
 
 我给他翻译为：许可控制器
@@ -17,8 +15,6 @@ kube-apiserver --enable-admission-plugins=NamespaceLifecyle,LimitRanger ...
 ```bash
 kube-apiserver --disable-admission-plugins=PodNodeSelector,AlwaysDeny ...
 ```
-
-
 
 ###控制器有很多`Admission`，每个`Admission`功能不同
 
