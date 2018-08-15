@@ -12,7 +12,7 @@
 - [x] <a href="doc/dashboard/README.md">dashboard</a>
 - [ ] <a href="doc/metrics-server/README.md">metrics-server</a>
 - [x] <a href="doc/helm/README.md">helm</a>
-- [x] <a href="doc/promethus/README.md">promethus</a>
+- [x] <a href="doc/prometheus/README.md">prometheus</a>
   - [x] <a href="doc/promethus/README.md">grafana</a>
 - [ ] ingress
   - [x] <a href="doc/ingress/README.md">nginx</a>
