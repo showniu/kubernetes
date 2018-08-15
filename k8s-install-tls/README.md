@@ -1,6 +1,6 @@
 # kubernetes tls 部署
 
-##1. 证书前提
+## 1. 证书前提
 
 部署前请确保此项目`k8s-install-tls`目录下`gen-ca/ssl`目录有以下结构和证书文件：
 
@@ -41,7 +41,7 @@ kubernetes版本：1.11.0
 >
 > Flannel和etcd 部署在所有节点上
 
-###Master节点部署
+### Master节点部署
 
 ![](http://github-images.test.upcdn.net/github.io/k8s03-k8s-tls-deploy.png)
 
