@@ -2,28 +2,30 @@
 
 ### 基本步骤流程：
 
-- [x] etcd  
-- [x] flannel
+- [x] <a href="etcd/README.md">etcd</a>
+- [x] <a href="flannel/README.md">flannel</a>
 - [x] Kubernetes集群
-  - [x] 生成证书
-  - [x] 部署Master节点
-  - [x] 部署Node节点
-- [x] kube-dns
-- [x] dashboard
-- [ ] metrics-server
-- [x] helm
-- [x] promethus
-  - [x] grafana
+  - [x] <a herf="k8s-install-tls/gen-ca/README.md">生成证书</a>
+  - [x] <a herf="k8s-install-tls/README.md">部署Master节点</a>
+  - [x] <a herf="k8s-install-tls/README.md">部署Node节点</a>
+- [x] <a herf="doc/kube-dns/README.md">kube-dns</a>
+- [x] <a herf="doc/dashboard/README.md">dashboard</a>
+- [ ] <a herf="doc/metrics-server/README.md">metrics-server</a>
+- [x] <a herf="doc/helm/README.md">helm</a>
+- [x] <a herf="doc/promethus/README.md">promethus</a>
+  - [x] <a herf="doc/promethus/README.md">grafana</a>
 - [x] ingress
-  - [x] nginx
+  - [x] <a herf="doc/ingress/README.md">nginx</a>
   - [ ] treafik
 - [ ] 未完待续
 
-#### 原理和操作文档请参考`/doc`目录下内容，和各目录下README.md
+
+
+#### 各组件原理和操作文档请参考`/doc`目录下内容，和各目录下README.md
 
 ------
 
-会部署只是k8s知识的皮毛、请不要止步于此。仔细研究各个组件的基本原理、这样才会更上一层楼。
+会部署只是k8s知识的皮毛、也不要止步于此。仔细研究各个组件的基本原理、这样才会更上一层楼。
 
 ------
 
