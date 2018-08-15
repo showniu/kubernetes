@@ -14,7 +14,7 @@
 - [x] <a herf="doc/helm/README.md">helm</a>
 - [x] <a herf="doc/promethus/README.md">promethus</a>
   - [x] <a herf="doc/promethus/README.md">grafana</a>
-- [x] ingress
+- [ ] ingress
   - [x] <a herf="doc/ingress/README.md">nginx</a>
   - [ ] treafik
 - [ ] hpa
