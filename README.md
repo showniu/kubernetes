@@ -17,6 +17,11 @@
 - [x] ingress
   - [x] <a herf="doc/ingress/README.md">nginx</a>
   - [ ] treafik
+- [ ] hpa
+- [ ] 存储
+  - [ ] xx
+- [ ] 服务网格
+  - [ ] xx
 - [ ] 未完待续
 
 
