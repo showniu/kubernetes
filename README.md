@@ -4,18 +4,18 @@
 
 - [x] <a href="etcd/README.md">etcd</a>
 - [x] <a href="flannel/README.md">flannel</a>
-- [x] <a herf="">Kubernetes集群</a>
-  - [x] <a herf="k8s-install-tls/gen-ca/README.md">生成证书</a>
-  - [x] <a herf="k8s-install-tls/README.md">部署Master节点</a>
-  - [x] <a herf="k8s-install-tls/README.md">部署Node节点</a>
-- [x] <a herf="doc/kube-dns/README.md">kube-dns</a>
-- [x] <a herf="doc/dashboard/README.md">dashboard</a>
-- [ ] <a herf="doc/metrics-server/README.md">metrics-server</a>
-- [x] <a herf="doc/helm/README.md">helm</a>
-- [x] <a herf="doc/promethus/README.md">promethus</a>
-  - [x] <a herf="doc/promethus/README.md">grafana</a>
+- [x] Kubernetes集群
+  - [x] <a href="k8s-install-tls/gen-ca/README.md">生成证书</a>
+  - [x] <a href="k8s-install-tls/README.md">部署Master节点</a>
+  - [x] <a href="k8s-install-tls/README.md">部署Node节点</a>
+- [x] <a href="doc/kube-dns/README.md">kube-dns</a>
+- [x] <a href="doc/dashboard/README.md">dashboard</a>
+- [ ] <a href="doc/metrics-server/README.md">metrics-server</a>
+- [x] <a href="doc/helm/README.md">helm</a>
+- [x] <a href="doc/promethus/README.md">promethus</a>
+  - [x] <a href="doc/promethus/README.md">grafana</a>
 - [ ] ingress
-  - [x] <a herf="doc/ingress/README.md">nginx</a>
+  - [x] <a href="doc/ingress/README.md">nginx</a>
   - [ ] treafik
 - [ ] hpa
 - [ ] 存储
