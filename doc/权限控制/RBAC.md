@@ -34,17 +34,6 @@ end
 RoleBinding(2.RoleBinding) -.-> |也可以引用| ClusterRole(3.ClusterRole)
 ```
 
-```mermaid
-graph TD
-subgraph 集群范围内的权限控制
-ClusterRolebinding(4.ClusterRolebinding) --> |引用| ClusterRole(3.ClusterRole)
-end
-subgraph 更多作用于用户,组,Service Accout
-RoleBinding(2.RoleBinding) -->|引用| Role(1.Role)
-end
-RoleBinding(2.RoleBinding) -.-> |也可以引用| ClusterRole(3.ClusterRole)
-```
-
 
 
 Role描述语法：
