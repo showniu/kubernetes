@@ -3,28 +3,47 @@
 ### 基本步骤流程：
 
 - [x] <a href="etcd/README.md">etcd</a>
+
 - [x] <a href="flannel/README.md">flannel</a>
+
 - [x] Kubernetes集群
   - [x] <a href="k8s-install-tls/gen-ca/README.md">生成证书</a>
   - [x] <a href="k8s-install-tls/README.md">部署Master节点</a>
   - [x] <a href="k8s-install-tls/README.md">部署Node节点</a>
+
 - [x] <a href="doc/kube-dns/README.md">kube-dns</a>
+
 - [x] <a href="doc/dashboard/README.md">dashboard</a>
+
 - [ ] <a href="doc/metrics-server/README.md">metrics-server</a>
+
 - [x] <a href="doc/helm/README.md">helm</a>
+
 - [x] <a href="doc/prometheus/README.md">prometheus</a>
   - [x] <a href="doc/promethus/README.md">grafana</a>
+
 - [ ] ingress
   - [x] <a href="doc/ingress/README.md">nginx</a>
   - [ ] treafik
+
 - [ ] hpa
+
 - [ ] 存储
-  - [ ] xx
+  - [ ] nfs
+  - [ ] ceph
+  - [ ] ...
+
 - [ ] 服务网格
-  - [ ] xx
+  - [ ] lstio
+  - [ ] ...
+
+- [ ] Weave Scope （一种监控工具）
+
 - [ ] 未完待续
 
+遗留问题:
 
+kubelet 启动和kubeconfig的关系。
 
 #### 各组件原理和操作文档请参考`/doc`目录下内容，和各目录下README.md
 
@@ -50,4 +69,7 @@ Dashboard官方部署文档：https://kubernetes.io/docs/tasks/access-applicatio
 
 个人教程：https://github.com/gjmzj/kubeasz
 
+kubernetes监控架构：https://github.com/kubernetes/community/blob/master/contributors/design-proposals/instrumentation/monitoring_architecture.md
+
+阿里云服务：https://help.aliyun.com/document_detail/53751.html?spm=a2c4g.11186623.6.561.avRpWN
 
