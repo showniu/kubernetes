@@ -117,3 +117,5 @@ apt-get install socat
 
 https://hub.kubeapps.com/ 、helm的仓库、相当于docker的hub。
 
+helm文档官方翻译版：https://whmzsu.github.io/helm-doc-zh-cn/
+
