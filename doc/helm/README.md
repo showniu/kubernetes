@@ -73,6 +73,31 @@ root@k8s01:/apps/k8s/helm# helm list
 
 helm安装成后，就可以借helm 安装其它服务、这个实践中`grafana`、`monitor`、`nginx-ingress` 服务是通过helm 的方式部署的。
 
+### helm默认配置无法下载的问题
+
+默认情况下、helm默认会使用`https://kubernetes-charts.storage.googleapis.com/`作为stable repository的地址、所以国内用户会无法正常使用这个。
+
+```bash
+root@k8s01:~# helm repo list
+NAME  	URL
+stable	https://kubernetes-charts.storage.googleapis.com
+local 	http://127.0.0.1:8879/charts
+```
+
+不过阿里云的容器服务也提供了这个的镜像站点https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts(...好像阿里云的很久没有更新了)。
+
+这个人自己自己镜像了一个，测试的目的凑合这用吧https://burdenbear.github.io/kube-charts-mirror/ 。后期可以自己单独管理一个helm仓库。
+
+```bash
+root@k8s01:~# helm repo remove stable
+root@k8s01:~# helm repo add stable https://burdenbear.github.io/kube-charts-mirror
+root@k8s01:~# helm update
+root@k8s01:~# helm repo list
+NAME  	URL
+local 	http://127.0.0.1:8879/charts
+stable	https://burdenbear.github.io/kube-charts-mirror/
+```
+
 ### 异常处理
 
 ```bash
