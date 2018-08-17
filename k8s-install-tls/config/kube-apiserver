@@ -44,6 +44,7 @@ KUBE_API_ARGS="--authorization-mode=Node,RBAC \
 --event-ttl=1h \
 --bind-address=192.168.10.249 \
 --requestheader-allowed-names="" \
+--requestheader-client-ca-file=/etc/kubernetes/ssl/ca.pem \
 --requestheader-extra-headers-prefix=X-Remote-Extra- \
 --requestheader-group-headers=X-Remote-Group \
 --requestheader-username-headers=X-Remote-User \
