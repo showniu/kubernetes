@@ -36,9 +36,9 @@
     - name: start master
       shell:
         systemctl daemon-reload &&
-        systemctl start kube-apiserver.service &&
-        systemctl start kube-controller-manager.service &&
-        systemctl start kube-scheduler.service
+        systemctl restart kube-apiserver.service
+        # systemctl start kube-controller-manager.service &&
+        # systemctl start kube-scheduler.service
 
     # - name: 为部署启动node节点准备
     #   shell:

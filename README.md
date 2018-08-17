@@ -20,7 +20,7 @@
 - [x] <a href="doc/helm/README.md">helm</a>
 
 - [x] <a href="doc/prometheus/README.md">prometheus</a>
-  - [x] <a href="doc/promethus/README.md">grafana</a>
+  - [x] <a href="doc/prometheus/README.md">grafana</a>
 
 - [ ] ingress
   - [x] <a href="doc/ingress/README.md">nginx</a>
