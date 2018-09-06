@@ -8,11 +8,7 @@
 
 prometheus可以原生的检测kubernetes、node、和prometheus本身。prometheus operator简化了prometheus在kubernetes上的安装，并且允许使用prometheus adapter自定义 metrics API。prometheus本身支持查询语法和简单的内置仪表板，用于插件和可视化数据。此外也可以使用grafana展示数据。
 
-
-
 [原文链接](https://kubernetes.io/docs/tasks/debug-application-cluster/resource-usage-monitoring/#full-metrics-pipelines)
-
-
 
 ### 部署prometheus
 
@@ -60,7 +56,5 @@ prometheus-server  http://node_ip:30002
 prometheus-alertmanager  http://node_ip:30003
 
 Grafana http://node_ip:30004
-
-
 
 参考连接 https://github.com/helm/charts/tree/master/stable/prometheus

@@ -1,10 +1,10 @@
-# Kubernetes权限控制
+Kubernetes权限控制
 
 引用自官方图表
 
 ![](http://github-images.test.upcdn.net/github.io/access-control-overview.svg)
 
-kubernetes集群的权限控制主要就是对APIserver的权限控制、基本上依次需要以下三个步骤：
+kubernetes集群的权限控制主要就是对APIserver的权限控制、入上图所示基本上依次需要以下三个步骤：
 
 * 认证 Authentication
 
@@ -14,7 +14,7 @@ kubernetes集群的权限控制主要就是对APIserver的权限控制、基本�
 
   * token
 
-    smlqbzd
+    smlqbz
 
   * 基本信息
 
@@ -30,3 +30,4 @@ kubernetes集群的权限控制主要就是对APIserver的权限控制、基本�
   有很多、作为kube-apiserver服务的启动参数
 
 [参考连接](https://kubernetes.io/cn/docs/admin/accessing-the-api/)
+

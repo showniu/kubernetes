@@ -1,4 +1,4 @@
-## metrices-server
+# metrices-server
 
 kubernetes metrics server 作为Heapster的继承者，在整个集范围内通过kubelet公开的`kubernetes.summary_api`的数据来收集各个计算节点和POD的CPU、内存使用情况。`summary_api`是一个效率高的API，用于将kubelet、cadviso的数据传递到metrics server。metrices-server 是一个轻量级的短期内存存储。
 

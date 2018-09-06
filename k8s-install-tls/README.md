@@ -19,7 +19,7 @@ total 44K
 -rw-r--r-- 1 root root 2.0K Jul 11 16:36 kubernetes.pem
 ```
 
-> 其中最为重要的pem证书文件，关于证书的如何制作生成、和证书详解请参考`gen-ca/ssl/README.md`文档
+> 其中最为重要的pem证书文件，关于证书的如何制作生成、和证书详解请参考<a href="./gen-ca/README.md">文档</a>
 
 ## 2. 基础环境
 
@@ -170,7 +170,7 @@ rules:
 
 > 这个文件是可以调优的，以后细看
 
-执行该描述问价ClusterRoleBinding
+执行该描述文件ClusterRoleBinding
 
 ```bash
 root@k8s01:/apps# kubectl  apply -f csr-crb.yaml
@@ -192,4 +192,4 @@ k8s03     Ready     <none>    20d       v1.11.0
 
 至此集群部署完成
 
-接下来继续部署kube-dns 服务
+接下来继续部署<a href="../doc/coredns/README.md">coreDns</a> 服务
