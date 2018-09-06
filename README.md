@@ -3,42 +3,32 @@
 ### 基本步骤流程：
 
 - [x] <a href="etcd/README.md">etcd</a>
-
 - [x] <a href="flannel/README.md">flannel</a>
-
 - [x] Kubernetes集群
   - [x] <a href="k8s-install-tls/gen-ca/README.md">生成证书</a>
   - [x] <a href="k8s-install-tls/README.md">部署Master节点</a>
   - [x] <a href="k8s-install-tls/README.md">部署Node节点</a>
-
-- [x] <a href="doc/kube-dns/README.md">kube-dns</a>
-
+- [x] dns
+  - [ ] ~~<a href="doc/kube-dns/README.md">kube-dns</a>~~已经弃用
+  - [ ] <a href="doc/coredns/README.md">coredns</a>
 - [x] <a href="doc/dashboard/README.md">dashboard</a>
-
 - [ ] <a href="doc/metrics-server/README.md">metrics-server</a>
-
 - [x] <a href="doc/helm/README.md">helm</a>
-
 - [x] <a href="doc/prometheus/README.md">prometheus</a>
   - [x] <a href="doc/prometheus/README.md">grafana</a>
-
 - [ ] ingress
   - [x] <a href="doc/ingress/README.md">nginx</a>
   - [ ] treafik
-
-- [ ] hpa
-
+- [ ] <a href="./doc/hpa/README.md">HPA</a>
+  - [ ] <a href="./doc/hpa/HPA时间.md">Horizontal Pod Autoscaler实践</a>
 - [ ] 存储
   - [ ] nfs
   - [ ] ceph
   - [ ] ...
-
 - [ ] 服务网格
   - [ ] Istio
   - [ ] ...
-
 - [ ] Weave Scope （一种监控工具）
-
 - [ ] 未完待续
 
 遗留问题:
@@ -72,4 +62,6 @@ Dashboard官方部署文档：https://kubernetes.io/docs/tasks/access-applicatio
 kubernetes监控架构：https://github.com/kubernetes/community/blob/master/contributors/design-proposals/instrumentation/monitoring_architecture.md
 
 阿里云服务：https://help.aliyun.com/document_detail/53751.html?spm=a2c4g.11186623.6.561.avRpWN
+
+
 
