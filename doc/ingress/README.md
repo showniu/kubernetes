@@ -282,3 +282,6 @@ nodeSelector:                   # 指定Ingress Controller调度到某个节点
 官方文档：https://kubernetes.github.io/ingress-nginx
 
 github仓库：https://github.com/kubernetes/ingress-nginx/tree/master/docs
+
+
+

@@ -20,7 +20,7 @@
   - [x] <a href="doc/ingress/README.md">nginx</a>
   - [ ] treafik
 - [ ] <a href="./doc/hpa/README.md">HPA</a>
-  - [ ] <a href="./doc/hpa/HPA时间.md">Horizontal Pod Autoscaler实践</a>
+  - [ ] <a href="./doc/hpa/HPA实践.md">Horizontal Pod Autoscaler实践</a>
 - [ ] 存储
   - [ ] nfs
   - [ ] ceph
