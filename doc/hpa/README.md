@@ -2,7 +2,7 @@
 
 HPA全称 Horizontal Pod Autoscaler、可以根据观察到的CPU使用率自动调整`replication controller`、`deploymont`、`replica set`（或者自定义指标），HPA不适用于无法缩放的对象、如`Deamonset`。
 
- ![HPA如何工作](/Users/ljp/Downloads/HPA.png)
+ ![HPA如何工作](http://github-images.test.upcdn.net/github.io/HPA.png)
 
 HPA实现了一个控制循环，这个循环周期是由控制管理器的`--horizontal-pod-autoscaler-sync-period`标志控制（默认30秒），在每一个循环周期内控制管理器根据`HorizontalPodAutoscaler`定义中的指定的度量标准查询资源利用率。控制管理器从metrics API（指定的POD的资源指标）或者自定义的metrics API（所有其他指标）获取指标。
 
