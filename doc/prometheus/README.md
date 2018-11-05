@@ -1,4 +1,4 @@
-## 部署 promethues
+## promethues实践
 
 ### 为什么要使用prometheus
 
