@@ -1,4 +1,4 @@
-## 通过helm部署 promethues
+## 部署 promethues
 
 ### 为什么要使用prometheus
 
@@ -10,7 +10,7 @@ prometheus可以原生的检测kubernetes、node、和prometheus本身。prometh
 
 [原文链接](https://kubernetes.io/docs/tasks/debug-application-cluster/resource-usage-monitoring/#full-metrics-pipelines)
 
-### 部署prometheus
+### 利用helm部署prometheus
 
 ```bash
 cd kubernetes/doc/prometheus
@@ -23,7 +23,7 @@ prometheus
 
 ```
 
-### 部署grafana
+### 利用helm部署grafana
 
 ```bash
 cd kubernetes/doc/grafana/
