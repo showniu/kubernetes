@@ -10,7 +10,7 @@
   - [x] <a href="k8s-install-tls/README.md">部署Node节点</a>
 - [x] dns
   - [ ] ~~<a href="doc/kube-dns/README.md">kube-dns</a>~~已经弃用
-  - [ ] <a href="doc/coredns/README.md">coredns</a>
+  - [x] <a href="doc/coredns/README.md">coredns</a>
 - [x] <a href="doc/dashboard/README.md">dashboard</a>
 - [ ] <a href="doc/metrics-server/README.md">metrics-server</a>
 - [x] <a href="doc/helm/README.md">helm</a>
